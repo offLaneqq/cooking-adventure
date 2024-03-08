@@ -1,0 +1,20 @@
+/*
+Theme Name: Cooking Adventure
+Author: Dmytro Klymchuk
+Description: Theme developed for resume about cooking
+Tags: cook, adventure
+Version: 1.0
+Requires at least: 5.0
+Requires PHP: 8.1.23
+Text Domain: cook-adv
+*/
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.page-numbers.current > span {
+  background-color: gray;
+  color: #fff;
+}
