@@ -1,0 +1,6 @@
+@import "./0-settings/settings";
+@import "~sass-mq"; // mixin that help compose media queries in an elegant way
+@import "./1-tools/settings";
+
+@import "./4-layouts/meta";
+@import "./4-layouts/pagination";
