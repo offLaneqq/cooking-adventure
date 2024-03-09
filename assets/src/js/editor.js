@@ -1,1 +1,1 @@
-console.log('editor.js');
+import "../scss/editor.scss";

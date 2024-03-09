@@ -1,1 +1,2 @@
-console.log('main.js')
+// Styles
+import "../scss/main.scss";
