@@ -27,8 +27,8 @@ class Assets
     public function set_styles()
     {
         // Register and enqueue styles
-        wp_register_style('cook-stylesheet', get_stylesheet_uri(), [], filemtime(get_template_directory() . '/style.css'));
-        wp_register_style('bootstrap', get_template_directory_uri() . '/assets/src/library/css/bootstrap.min.css', [], false);
+        wp_register_style('cook-stylesheet', COOK_BUILD_CSS_URI . '/main.css', ['bootstrap-css'], @filemtime(COOK_BUILD_CSS_DIR_PATH . '/main.css'));
+        wp_register_style('bootstrap', COOK_BUILD_LIB_URI . '/css/bootstrap.min.css', [], false);
 
         wp_enqueue_style('cook-stylesheet');
         wp_enqueue_style('bootstrap');
@@ -37,8 +37,8 @@ class Assets
     public function set_scripts()
     {
         // Register and enqueue scripts
-        wp_register_script('main', get_template_directory_uri() . '/assets/src/js/main.js', ['jquery'], filemtime(get_template_directory() . '/assets/src/js/main.js'), false);
-        wp_register_script('bootstrap', get_template_directory_uri() . '/assets/src/library/js/bootstrap.min.js', ['jquery'], false, false);
+        wp_register_script('main', COOK_BUILD_JS_URI . '/main.js', ['jquery'], @filemtime(COOK_BUILD_JS_URI . '/main.js'), false);
+        wp_register_script('bootstrap', COOK_BUILD_LIB_URI . '/js/bootstrap.min.js', ['jquery'], false, false);
 
         wp_enqueue_script('main');
         wp_enqueue_script('bootstrap');
