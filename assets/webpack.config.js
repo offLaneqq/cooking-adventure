@@ -12,6 +12,7 @@ const BUILD_DIR = path.resolve(__dirname, "build");
 const entry = {
   main: JS_DIR + "/main.js",
   editor: JS_DIR + "/editor.js",
+  single: JS_DIR + "/single.js",
 };
 
 const output = {
@@ -40,17 +41,6 @@ const rules = [
       "sass-loader",
     ],
   },
-  {
-    test: /\.(png|svg|jpg|jpeg|gif)$/i,
-    include: [IMG_DIR],
-    use: {
-      loader: "file-loader",
-      options: {
-        name: "[path][name].[ext]",
-        publicPath: "production" === process.env.NODE_ENV ? "../" : "../../",
-      },
-    },
-  },
 ];
 
 const plugins = () => [
@@ -59,11 +49,14 @@ const plugins = () => [
     filename: "css/[name].css", // extracted in build/css/main.css for example
   }),
   new CopyPlugin({
-    patterns: [{ from: LIB_DIR, to: BUILD_DIR + "/library" }],
+    patterns: [
+      { from: LIB_DIR, to: BUILD_DIR + "/library" },
+      { from: IMG_DIR, to: BUILD_DIR + "/img" },
+    ],
   }),
 ];
 
-module.exports = (env, argv) => ({
+module.exports = (env) => ({
   mode: env.mode ?? "development",
   entry: entry,
   output: output,
@@ -78,7 +71,11 @@ module.exports = (env, argv) => ({
       }),
     ],
   },
-  // performance: {
-  //   hints: false,    // need add lazy imports or smth for improve performance
-  // },
+  devtool: "inline-source-map",
+  externals: {
+    jquery: "jQuery",
+  },
+  performance: {
+    hints: false,
+  },
 });
