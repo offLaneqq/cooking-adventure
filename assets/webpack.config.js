@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 const webpack = require("webpack");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const DependencyExtractionWebpackPlagin = require("@wordpress/dependency-extraction-webpack-plugin");
 
 const JS_DIR = path.resolve(__dirname, "src/js");
 const IMG_DIR = path.resolve(__dirname, "src/img");
@@ -13,6 +14,7 @@ const entry = {
   main: JS_DIR + "/main.js",
   editor: JS_DIR + "/editor.js",
   single: JS_DIR + "/single.js",
+  blocks: JS_DIR + "/blocks.js"
 };
 
 const output = {
@@ -53,6 +55,10 @@ const plugins = () => [
       { from: LIB_DIR, to: BUILD_DIR + "/library" },
       { from: IMG_DIR, to: BUILD_DIR + "/img" },
     ],
+  }),
+  new DependencyExtractionWebpackPlagin({
+    injectPolyfill: true,
+    combineAssets: true,
   }),
 ];
 
