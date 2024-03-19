@@ -6,6 +6,13 @@
 
 get_header();
 
+global $wp_query;
+$wp_query->set('posts_per_page', 9);
+$wp_query->query($wp_query->query_vars);
+// echo '<pre>';
+// print_r($wp_query);
+// wp_die();
+
 ?>
 
 <div class="primary">
@@ -58,7 +65,6 @@ get_header();
         ?>
         <div class="container">
             <?php cook_pagination(); ?>
-            wer
         </div>
     </main>
 </div>
