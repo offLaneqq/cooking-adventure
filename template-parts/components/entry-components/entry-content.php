@@ -4,7 +4,7 @@
 
 ?>
 
-<div class="entry-content">
+<div class="entry-content" style="text-indent: 2rem; text-align: justify;">
     <?php
     if (is_single()) {
         the_content(
@@ -28,7 +28,7 @@
             ]
         );
     } else {
-        cook_the_excerpt(350);
+        cook_the_excerpt(200);
 
     }
     ?>
