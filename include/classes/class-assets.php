@@ -27,8 +27,8 @@ class Assets
     public function set_styles()
     {
         // Register and enqueue styles
-        wp_register_style('cook-stylesheet', COOK_BUILD_CSS_URI . '/main.css', ['bootstrap-css'], @filemtime(COOK_BUILD_CSS_DIR_PATH . '/main.css'));
         wp_register_style('bootstrap', COOK_BUILD_LIB_URI . '/css/bootstrap.min.css', [], false);
+        wp_register_style('cook-stylesheet', COOK_BUILD_CSS_URI . '/main.css', ['bootstrap'], @filemtime(COOK_BUILD_CSS_DIR_PATH . '/main.css'), 'all');
 
         wp_enqueue_style('cook-stylesheet');
         wp_enqueue_style('bootstrap');
