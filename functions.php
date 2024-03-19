@@ -18,6 +18,10 @@ if (!defined('COOK_BUILD_URI')) {
     define('COOK_BUILD_URI', untrailingslashit(get_template_directory_uri()) . '/assets/build');
 }
 
+if (!defined('COOK_BUILD_PATH')) {
+    define('COOK_BUILD_PATH', untrailingslashit(get_template_directory()) . '/assets/build');
+}
+
 if (!defined('COOK_BUILD_JS_URI')) {
     define('COOK_BUILD_JS_URI', untrailingslashit(get_template_directory_uri()) . '/assets/build/js');
 }
