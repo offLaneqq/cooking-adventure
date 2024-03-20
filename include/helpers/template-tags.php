@@ -104,7 +104,7 @@ function cook_excerpt_more($more = '')
 function cook_pagination()
 {
     $args = [
-        'before_page_number' => '<span class="btn border border-secondary mr-2 mb-2">',
+        'before_page_number' => '<span class="btn border border-secondary m-2">',
         'after_page_number' => '</span>'
     ];
 
@@ -119,7 +119,7 @@ function cook_pagination()
     ];
     if (paginate_links($args)) {
         printf(
-            '<nav class="cook-pagination clearfix">%s</nav>',
+            '<nav class="cook-pagination clearfix text-center">%s</nav>',
             wp_kses(paginate_links($args), $allowed_tags)
         );
     }

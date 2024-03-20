@@ -47,3 +47,7 @@
     }
   }
 }
+
+@mixin random-bgr(){
+  background: rgba(random(255), random(255), random(255), 0.3);
+}

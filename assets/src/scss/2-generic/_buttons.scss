@@ -1,0 +1,16 @@
+.category-btn {
+  $num-colors: 5;
+  $base-color: #cfbbad;
+  $spectrum: 360deg;
+  $offset: 50deg;
+
+  @for $i from 0 to $num-colors {
+    &:nth-child(#{$i}) {
+      @include random-bgr();
+    }
+  }
+}
+
+.category-link {
+  color: black;
+}
