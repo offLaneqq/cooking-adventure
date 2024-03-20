@@ -32,7 +32,7 @@ $header_menus = wp_get_nav_menu_items($header_menu_id);
                             if ($menu_item->object_id != 24 && !$menu_item->menu_item_parent) {
 
                         ?>
-                                <li class="nav-item">
+                                <li class="nav-item mr-2">
                                     <a class="nav-link" href="<?php echo esc_url($menu_item->url); ?>">
                                         <?php
                                         echo esc_html($menu_item->title);
@@ -71,10 +71,13 @@ $header_menus = wp_get_nav_menu_items($header_menu_id);
                 ?>
                 <?php
                 ?>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                <div class="box">
+                    <form name="search">
+                        <input class="input" name="txt" onmouseout="this.value = ''; this.blur();" placeholder="Search">
+                        
+                    </form>
+                </div>
+
             </div>
         </div>
     </div>
