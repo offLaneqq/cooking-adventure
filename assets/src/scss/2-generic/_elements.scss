@@ -472,19 +472,27 @@ a {
 .box:hover input {
   color: #414042;
   width: 250px;
-  background: #76e3c0;
+  background: $white;
+  border: 2px solid #76e3c0;
   border-radius: 10px;
 }
-.box i {
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  transform: translate(-50%, -50%);
-  font-size: 26px;
-  color: #ffd52d;
-  transition: 0.2s;
-}
-.box:hover i {
-  opacity: 0;
-  z-index: -1;
+// .box i {
+//   position: absolute;
+//   top: 50%;
+//   right: 15px;
+//   transform: translate(-50%, -50%);
+//   font-size: 26px;
+//   color: #ffd52d;
+//   transition: 0.2s;
+// }
+// .box:hover i {
+//   opacity: 0;
+//   z-index: -1;
+// }
+
+footer {
+  padding-top: 3rem;
+  background-color: #76e3c0;
+  color: black;
+  margin-top: 5rem;
 }
