@@ -59,6 +59,9 @@ $header_menus = wp_get_nav_menu_items($header_menu_id);
                                         <a class="dropdown-item" href="<?php echo esc_url('http://cooking-theme.local/cuisines/chinese-cuisine/'); ?>">
                                             <?php echo esc_html('Chinese cuisine'); ?>
                                         </a>
+                                        <a class="dropdown-item" href="<?php echo esc_url('http://cooking-theme.local/cuisines/italian-cuisine/'); ?>">
+                                            <?php echo esc_html('Italian cuisine'); ?>
+                                        </a>
                                     </div>
                                 </li>
                         <?php
@@ -72,10 +75,7 @@ $header_menus = wp_get_nav_menu_items($header_menu_id);
                 <?php
                 ?>
                 <div class="box">
-                    <form name="search">
-                        <input class="input" name="txt" onmouseout="this.value = ''; this.blur();" placeholder="Search">
-                        
-                    </form>
+                    <?php get_search_form(); ?>
                 </div>
 
             </div>
