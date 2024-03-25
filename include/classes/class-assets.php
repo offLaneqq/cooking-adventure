@@ -39,8 +39,12 @@ class Assets
         // Register and enqueue scripts
         wp_register_script('main', COOK_BUILD_JS_URI . '/main.js', ['jquery'], @filemtime(COOK_BUILD_JS_URI . '/main.js'), false);
         wp_register_script('bootstrap', COOK_BUILD_LIB_URI . '/js/bootstrap.min.js', ['jquery'], false, false);
+        wp_register_script('author-js', COOK_BUILD_JS_URI . '/author.js', ['jquery'], filemtime(COOK_BUILD_JS_DIR_PATH . '/author.js'), true);
 
         wp_enqueue_script('main');
         wp_enqueue_script('bootstrap');
+        if (is_author()) {
+            wp_enqueue_script('author-js');
+        }
     }
 }
