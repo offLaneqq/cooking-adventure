@@ -32,7 +32,7 @@ $header_menus = wp_get_nav_menu_items($header_menu_id);
                             if ($menu_item->object_id != 24 && !$menu_item->menu_item_parent) {
 
                         ?>
-                                <li class="nav-item mr-2">
+                                <li class="nav-item mr-4">
                                     <a class="nav-link" href="<?php echo esc_url($menu_item->url); ?>">
                                         <?php
                                         echo esc_html($menu_item->title);

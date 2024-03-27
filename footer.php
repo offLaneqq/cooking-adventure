@@ -26,7 +26,7 @@
             </section>
             <section class="col-lg-4 col-md-6 col-sm-12">
                 <ul class="d-flex">
-                    <li class="list-unstyled"><a href="https://www.linkedin.com/" title="linkedin">
+                    <li class="list-unstyled"><a href="https://www.linkedin.com/in/dmytro-klymchuk/" title="linkedin">
                             <svg width="48">
                                 <use href="#icon-linkedin"></use>
                             </svg>
